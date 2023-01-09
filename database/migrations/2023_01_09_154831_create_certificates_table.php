@@ -15,6 +15,14 @@ class CreateCertificatesTable extends Migration
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
+            $table->longText('certificate');
+            $table->longText('cipher_encryption');
+            $table->unsignedBigInteger('level_id')->index();
+            $table->unsignedBigInteger('student_mat')->index();
+            $table->unsignedBigInteger('admin_id')->index();
+            $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
+            $table->foreign('student_mat')->references('mat_no')->on('users')->onDelete('cascade');
+            $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade');
             $table->timestamps();
         });
     }

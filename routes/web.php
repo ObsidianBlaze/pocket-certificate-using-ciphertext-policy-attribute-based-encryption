@@ -20,8 +20,10 @@ Route::get('/', function () {
 
 //Student
 Route::prefix('/student')->group(function () {
-    Route::get('/login', [StudentController::class, 'loginView']);
+    Route::get('/login', [StudentController::class, 'loginView'])->name('student_login');
     Route::get('/register', [StudentController::class, 'registerView']);
+    Route::post('/create', [StudentController::class, 'registerStudent'])->name('create');
+
 
 });
 

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/student_login', [LoginController::class, 'loginView']);
+//Student
+Route::prefix('/student')->group(function () {
+    Route::get('/login', [StudentController::class, 'loginView']);
+    Route::get('/register', [StudentController::class, 'registerView']);
 
+});
 

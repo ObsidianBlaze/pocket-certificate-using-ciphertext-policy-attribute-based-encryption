@@ -32,7 +32,10 @@ class StudentController extends Controller
         $register = new User();
 
         if ($register::where('mat_no',$request->matNo)->first()){
-            return redirect('/student/register')->withInput()->withErrors($validator)->with('errorMsg', 'Account Already Exists');
+            return redirect('/student/register')->with('errorMsg', 'Account Already Exists');
+        }
+        if($validator->fails()){
+            return redirect('/student/register')->withInput()->withErrors($validator);
         }
         $register->mat_no = $request->matNo;
         $register->surname = $request->surname;

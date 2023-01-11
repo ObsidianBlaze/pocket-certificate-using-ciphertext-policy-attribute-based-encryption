@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AdminController;
+
 
 
 /*
@@ -27,6 +29,13 @@ Route::prefix('/student')->group(function () {
     Route::post('/create', [StudentController::class, 'registerStudent'])->name('create');
     Route::post('/login', [LoginController::class, 'studentLogin'])->name('login_student');
 
-
 });
 
+//Admin
+Route::prefix('/admin')->group(function () {
+    Route::get('/login', [AdminController::class, 'loginView'])->name('admin_login');
+//    Route::get('/register', [AdminController::class, 'registerView'])->name('admin_register');
+//    Route::post('/create', [AdminController::class, 'registerAdmin'])->name('create');
+    Route::post('/login', [LoginController::class, 'adminLogin'])->name('login_admin');
+
+});

@@ -14,7 +14,6 @@ class LoginController extends Controller
 
     public function studentLogin(Request $request)
     {
-        return 3;
         $request->validate([
             'mat_no' => 'required',
             'password' => 'required',

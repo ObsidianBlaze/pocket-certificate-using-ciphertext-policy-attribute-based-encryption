@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,7 @@ Route::prefix('/student')->group(function () {
     Route::get('/login', [StudentController::class, 'loginView'])->name('student_login');
     Route::get('/register', [StudentController::class, 'registerView'])->name('student_register');
     Route::post('/create', [StudentController::class, 'registerStudent'])->name('create');
+    Route::post('/login', [LoginController::class, 'studentLogin'])->name('login_student');
 
 
 });

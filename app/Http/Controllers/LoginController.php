@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
 class LoginController extends Controller
 {
     public function index()
@@ -14,10 +16,13 @@ class LoginController extends Controller
 
     public function studentLogin(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'mat_no' => 'required',
             'password' => 'required',
         ]);
+        if($validator->fails()){
+            return redirect('/student/register')->withInput()->withErrors($validator);
+        }
 
         $credentials = $request->only('mat_no', 'password');
         if (Auth::attempt($credentials)) {
@@ -26,8 +31,7 @@ class LoginController extends Controller
 //                ->withSuccess('Signed in');
         }
 
-        return "invalide credentials";
-//        return redirect("login")->withSuccess('Login details are not valid');
+        return redirect('/student/login')->with('errorMsg', 'Confirm your username and password');
     }
 
 

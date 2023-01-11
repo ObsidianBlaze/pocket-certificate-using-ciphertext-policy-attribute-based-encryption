@@ -10,12 +10,12 @@ class StudentController extends Controller
 {
     public function loginView()
     {
-        return view('studentlogin');
+        return view('/student/studentlogin');
     }
 
     public function registerView()
     {
-        return view('studentregister');
+        return view('/student/studentregister');
     }
 
     public function registerStudent(Request $request)

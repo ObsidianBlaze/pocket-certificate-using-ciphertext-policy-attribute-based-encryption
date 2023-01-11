@@ -21,7 +21,7 @@ Route::get('/', function () {
 //Student
 Route::prefix('/student')->group(function () {
     Route::get('/login', [StudentController::class, 'loginView'])->name('student_login');
-    Route::get('/register', [StudentController::class, 'registerView']);
+    Route::get('/register', [StudentController::class, 'registerView'])->name('student_register');
     Route::post('/create', [StudentController::class, 'registerStudent'])->name('create');
 
 

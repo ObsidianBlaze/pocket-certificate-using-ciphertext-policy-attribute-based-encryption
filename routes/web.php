@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\HomepageController;
 
 
 
@@ -19,10 +20,8 @@ use App\Http\Controllers\Admin\AdminAuthController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//Home page
+Route::get('/', [HomepageController::class, 'homeView'])->name('home_page');
 
 //Student
 Route::prefix('/student')->group(function () {
@@ -40,6 +39,8 @@ Route::prefix('/admin')->group(function () {
 //    Route::post('/create', [AdminController::class, 'registerAdmin'])->name('create');
 //    Route::post('/login', [LoginController::class, 'adminLogin'])->name('login_admin');
     Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('login_admin');
+    Route::post('/logout', [AdminAuthController::class, 'adminLogout'])->name('logout_admin');
+
 
 
 });

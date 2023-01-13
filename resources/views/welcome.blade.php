@@ -134,16 +134,11 @@
                             <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
                         </li>
                         <li>
-                                <div class="dropdown inline-block relative">
-                                    <button class="bg-white-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
-                                        <span class="mr-1">Dropdown</span>
-                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                                    </button>
-                                    <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
-                                        <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">One</a></li>
-                                        <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Two</a></li>
-                                    </ul>
-                                </div>
+                            <button class="block py-2 hasSubMenu md:font-medium" >Login <span class="inline-block"><svg data-baseweb="icon" viewBox="0 0 24 24" class="ml-1 w-4 h-4 fill-current login"><title>Login</title><path transform="rotate(270, 12, 12)" fill-rule="evenodd" clip-rule="evenodd" d="M9 12C9 12.2652 9.10536 12.5196 9.29289 12.7071L13.2929 16.7071C13.6834 17.0976 14.3166 17.0976 14.7071 16.7071C15.0976 16.3166 15.0976 15.6834 14.7071 15.2929L11.4142 12L14.7071 8.70711C15.0976 8.31658 15.0976 7.68342 14.7071 7.29289C14.3166 6.90237 13.6834 6.90237 13.2929 7.29289L9.29289 11.2929C9.10536 11.4804 9 11.7348 9 12Z"></path></svg> </span> </button>
+                            <ul class="text-sm subMenu hidden border-gray-100 rounded-lg bg-gray-50 md:flex-row md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                                <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                                <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -381,6 +376,15 @@
         });
     }
     autoplayCarousel();
+
+    function toggleMenu (btn) {
+        const el = btn.parentElement.querySelector('.subMenu')
+        el.classList.toggle('hidden')
+    }
+    const btn = document.querySelector('.hasSubMenu')
+    btn.addEventListener('click', function(){
+        toggleMenu(btn)
+    })
 
 </script>
 </html>

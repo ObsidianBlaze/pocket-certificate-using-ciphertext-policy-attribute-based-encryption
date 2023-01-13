@@ -151,8 +151,8 @@
         </nav>
 
         <div class="text-center bg-gray-50 text-gray-800 py-24 px-6">
-            <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">The best offer on the market
-                <br/><span class="text-blue-600">for your business</span></h1>
+            <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">Pocket Certificate
+                <br/><span class="text-blue-600">Lagos State Polytechnic</span></h1>
         </div>
     </section>
 
@@ -165,25 +165,25 @@
 <div id="carousel">
     <div id="slide-container">
         <div class="slide" data-slideIndex="0">
-            <div class="slide-banner">Tour the Empire State Building! <a href="">Buy tickets now.</a></div>
-            <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/d5JiF2JjxniJRH6xviYA.jpg?auto=format&w=800">
+            <div class="slide-banner">School Entrance</div>
+            <img width="1200" height="600" src="{{asset('img/laspotech_slide1.jpg')}}">
         </div>
         <div class="slide" data-slideIndex="1">
-            <div class="slide-banner">Ride the Shinkansen! <a href="">Buy tickets now.</a></div>
-            <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/atRogpxlJTXAvhWe654i.jpg?auto=format&w=800">
+            <div class="slide-banner">Library Complex!</div>
+            <img width="1200" height="600" src="{{asset('img/laspotech_slide2.jpg')}}">
         </div>
         <div class="slide" data-slideIndex="2">
-            <div class="slide-banner">Discover relaxation! <a href="">Buy tickets now.</a></div>
-            <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/q8svpF1B6dG5wNuiTgyV.jpg?auto=format&w=800">
+            <div class="slide-banner">Governor Awarding Student </div>
+            <img width="1200" height="600" src="{{asset('img/laspotech_slide3.jpg')}}">
         </div>
-        <div class="slide" data-slideIndex="3">
-            <div class="slide-banner">See penguins! <a href="">Buy tickets now.</a></div>
-            <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/oweFaoCZ4g8bieZdvG5L.jpg?auto=format&w=800">
-        </div>
-        <div class="slide" data-slideIndex="4">
-            <div class="slide-banner">Take a ride on the wheel! <a href="">Buy tickets now.</a></div>
-            <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/G0aWgHwWJTPZus9YEMyH.jpg?auto=format&w=800">
-        </div>
+{{--        <div class="slide" data-slideIndex="3">--}}
+{{--            <div class="slide-banner">See penguins! <a href="">Buy tickets now.</a></div>--}}
+{{--            <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/oweFaoCZ4g8bieZdvG5L.jpg?auto=format&w=800">--}}
+{{--        </div>--}}
+{{--        <div class="slide" data-slideIndex="4">--}}
+{{--            <div class="slide-banner">Take a ride on the wheel! <a href="">Buy tickets now.</a></div>--}}
+{{--            <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/G0aWgHwWJTPZus9YEMyH.jpg?auto=format&w=800">--}}
+{{--        </div>--}}
     </div>
     <div id="back-button" class="arrow back">←</div>
     <div id="forward-button" class="arrow forward">→</div>
@@ -191,8 +191,8 @@
         <div class="slide-indicator active"></div>
         <div class="slide-indicator"></div>
         <div class="slide-indicator"></div>
-        <div class="slide-indicator"></div>
-        <div class="slide-indicator"></div>
+{{--        <div class="slide-indicator"></div>--}}
+{{--        <div class="slide-indicator"></div>--}}
     </div>
 </div>
 

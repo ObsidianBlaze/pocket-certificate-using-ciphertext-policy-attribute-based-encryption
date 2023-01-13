@@ -27,7 +27,7 @@ class AdminAuthenticated
             auth()->guard('admin')->logout();
             Session::flush();
 
-            return redirect()->route('homePage');
+            return redirect()->route('home_page');
         }
     }
 }

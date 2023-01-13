@@ -39,15 +39,16 @@ Route::prefix('/admin')->group(function () {
 //    Route::post('/create', [AdminController::class, 'registerAdmin'])->name('create');
 //    Route::post('/login', [LoginController::class, 'adminLogin'])->name('login_admin');
     Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('login_admin');
-    Route::post('/logout', [AdminAuthController::class, 'adminLogout'])->name('logout_admin');
+    Route::get('/logout', [AdminAuthController::class, 'adminLogout'])->name('logout_admin');
 
 
 
-});
-
-Route::group(['middleware' => 'adminauth'], function () {
-    Route::get('/', function () {
-        return view('welcome');
-    })->name('adminDashboard');
 
 });
+
+//Route::group(['middleware' => 'adminauth'], function () {
+//    Route::get('/', function () {
+//        return view('welcome');
+//    })->name('adminDashboard');
+//
+//});

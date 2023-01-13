@@ -58,7 +58,7 @@
     </div>
 </div>
 
-<div class="container my-24 px-6 mx-auto">
+<div class="container my-24 px-6 mx-auto" id="news">
 
     <!-- Section: Design Block -->
     <section class="mb-32 text-gray-800 text-center md:text-left">

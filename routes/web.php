@@ -22,6 +22,8 @@ use App\Http\Controllers\HomepageController;
 */
 //Home page
 Route::get('/', [HomepageController::class, 'homeView'])->name('home_page');
+Route::get('/about', [HomepageController::class, 'aboutView'])->name('about');
+
 
 //Student
 Route::prefix('/student')->group(function () {

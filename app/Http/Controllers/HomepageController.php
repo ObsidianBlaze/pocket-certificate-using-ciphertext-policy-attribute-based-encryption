@@ -9,4 +9,8 @@ class HomepageController extends Controller
     public function homeView(){
         return view('welcome');
     }
+
+    public function aboutView(){
+        return view('about');
+    }
 }

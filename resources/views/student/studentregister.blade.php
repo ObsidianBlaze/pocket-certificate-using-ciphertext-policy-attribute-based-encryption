@@ -1,3 +1,13 @@
+<!doctype html>
+<html lang="en">
+@include('layouts.navstyle')
+<body>
+<section class="mb-40">
+
+    @include('layouts.nav')
+
+</section>
+
 @include('layouts.main')
 @if(session('errorMsg'))
     <div class="flex p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-gray-800 dark:text-red-400"
@@ -132,3 +142,6 @@
         </div>
     </div>
 </section>
+</body>
+@include('layouts.footer')
+</html>

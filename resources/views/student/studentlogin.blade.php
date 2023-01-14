@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+
+@include('layouts.navstyle')
+
 <style>
     body {
         overflow: hidden; /* Hide scrollbars */
     }
 </style>
-@include('layouts.navstyle')
 <body>
 <section class="mb-40">
 
@@ -46,7 +48,7 @@
 
 <section class="bg-gray-50 dark:bg-gray-900">
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto sm:h-screen lg:py-0"
-         style="padding-bottom: 20%; margin-bottom: -16%;">
+         style="padding-bottom: 20%; margin-bottom: -15%;">
         <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
             <img class="w-18 h-18 mr-2" src="{{asset('img/newlogo.jpg')}}" alt="logo">
         </a>

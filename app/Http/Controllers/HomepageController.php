@@ -13,4 +13,9 @@ class HomepageController extends Controller
     public function aboutView(){
         return view('about');
     }
+
+    public function contactView(){
+        return view('contact');
+
+    }
 }

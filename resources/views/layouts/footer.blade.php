@@ -10,7 +10,7 @@
             <a href="{{url('/#news')}}" class="mr-4 hover:underline md:mr-6">News</a>
         </li>
         <li>
-            <a href="#" class="hover:underline">Contact</a>
+            <a href="{{url('/contact')}}" class="hover:underline">Contact</a>
         </li>
     </ul>
 </footer>

@@ -1,3 +1,18 @@
+<!doctype html>
+<html lang="en">
+@include('layouts.navstyle')
+<style>
+    body {
+        overflow: hidden; /* Hide scrollbars */
+    }
+</style>
+
+<body>
+<section class="mb-40">
+
+    @include('layouts.nav')
+
+</section>
 @include('layouts.main')
 @if(session('successMsg'))
     <div class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-gray-800 dark:text-green-400" role="alert">
@@ -26,7 +41,7 @@
 @endif
 
 <section class="bg-gray-50 dark:bg-gray-900">
-    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0" style="padding-bottom: 20%; margin-bottom: -15%;">
         <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
             <img class="w-18 h-18 mr-2" src="{{asset('img/newlogo.jpg')}}" alt="logo">
         </a>
@@ -52,3 +67,6 @@
         </div>
     </div>
 </section>
+</body>
+@include('layouts.footer')
+</html>

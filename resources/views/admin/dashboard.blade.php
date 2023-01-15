@@ -8,95 +8,22 @@
                 <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                     <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                            Register your credentials
+                            Create New Admin
                         </h1>
                         <form class="space-y-4 md:space-y-6" action="{{route('create')}}" method="post">
 
                             {{csrf_field()}}
                             <div>
-                                <label for="matNo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Matriculation
-                                    Number</label>
+                                <label for="matNo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Admin Email</label>
                                 <input type="number" name="matNo" id="matNo"
                                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                       placeholder="2005022032" required="" value="{{old('matNo')}}">
-                                @if($errors->has('matNo'))
+                                       placeholder="xy@mail.com" required="" value="{{old('email')}}">
+                                @if($errors->has('email'))
                                     <div class="error-danger"
-                                         style="color: #b85151; font-size: small">{{ $errors->first('matNo') }}</div>
+                                         style="color: #b85151; font-size: small">{{ $errors->first('email') }}</div>
                                 @endif
                             </div>
 
-                            <div>
-                                <label for="surname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Surname</label>
-                                <input type="text" name="surname" id="surname"
-                                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                       placeholder="Okoye" required="" value="{{old('surname')}}">
-                                @if($errors->has('surname'))
-                                    <div class="error-danger"
-                                         style="color: #b85151; font-size: small">{{ $errors->first('surname') }}</div>
-                                @endif
-                            </div>
-
-                            <div>
-                                <label for="state_of_origin"
-                                       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State of
-                                    Origin</label>
-                                <select name="state_of_origin" id="state" onchange="toggleLGA(this)" value="{{old('state_of_origin') }}">
-                                    <option value="" selected="selected">Select State...</option>
-                                    <option value="Abia">Abia</option>
-                                    <option value="Adamawa">Adamawa</option>
-                                    <option value="AkwaIbom">AkwaIbom</option>
-                                    <option value="Anambra">Anambra</option>
-                                    <option value="Bauchi">Bauchi</option>
-                                    <option value="Bayelsa">Bayelsa</option>
-                                    <option value="Benue">Benue</option>
-                                    <option value="Borno">Borno</option>
-                                    <option value="Cross River">Cross River</option>
-                                    <option value="Delta">Delta</option>
-                                    <option value="Ebonyi">Ebonyi</option>
-                                    <option value="Edo">Edo</option>
-                                    <option value="Ekiti">Ekiti</option>
-                                    <option value="Enugu">Enugu</option>
-                                    <option value="FCT">FCT</option>
-                                    <option value="Gombe">Gombe</option>
-                                    <option value="Imo">Imo</option>
-                                    <option value="Jigawa">Jigawa</option>
-                                    <option value="Kaduna">Kaduna</option>
-                                    <option value="Kano">Kano</option>
-                                    <option value="Katsina">Katsina</option>
-                                    <option value="Kebbi">Kebbi</option>
-                                    <option value="Kogi">Kogi</option>
-                                    <option value="Kwara">Kwara</option>
-                                    <option value="Lagos">Lagos</option>
-                                    <option value="Nasarawa">Nasarawa</option>
-                                    <option value="Niger">Niger</option>
-                                    <option value="Ogun">Ogun</option>
-                                    <option value="Ondo">Ondo</option>
-                                    <option value="Osun">Osun</option>
-                                    <option value="Oyo">Oyo</option>
-                                    <option value="Plateau">Plateau</option>
-                                    <option value="Rivers">Rivers</option>
-                                    <option value="Sokoto">Sokoto</option>
-                                    <option value="Taraba">Taraba</option>
-                                    <option value="Yobe">Yobe</option>
-                                    <option value="Zamfara">Zamafara</option>
-                                </select>
-                                @if($errors->has('state_of_origin'))
-                                    <div class="error-danger"
-                                         style="color: #b85151; font-size: small">{{ $errors->first('state_of_origin') }}</div>
-                                @endif
-                            </div>
-
-                            <div>
-                                <label for="dob" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Of
-                                    Birth</label>
-                                <input type="date" name="dob" id="dob"
-                                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                       placeholder="" required="" value="{{old('dob')}}">
-                                @if($errors->has('dob'))
-                                    <div class="error-danger"
-                                         style="color: #b85151; font-size: small">{{ $errors->first('dob') }}</div>
-                                @endif
-                            </div>
                             <div>
                                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                                 <input type="password" name="password" id="password" placeholder="••••••••"
@@ -108,8 +35,8 @@
                                 @endif
                             </div>
 
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                Register
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                                Create
                             </button>
                         </form>
                     </div>

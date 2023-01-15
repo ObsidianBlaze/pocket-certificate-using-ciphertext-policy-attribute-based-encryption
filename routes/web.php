@@ -45,7 +45,7 @@ Route::prefix('/admin')->group(function () {
     Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('login_admin');
     Route::get('/logout', [AdminAuthController::class, 'adminLogout'])->name('logout_admin');
 
-
+    Route::get('/dashboard', [AdminController::class, 'dashboardView'])->name('admin_dashboard');
 
 
 });

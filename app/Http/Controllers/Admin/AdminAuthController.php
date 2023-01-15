@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\Validator;
 
 class AdminAuthController extends Controller
 {
-    public function getLogin(){
-        return view('admin.auth.login');
-    }
 
     public function postLogin(Request $request)
     {

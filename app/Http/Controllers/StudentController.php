@@ -21,7 +21,7 @@ class StudentController extends Controller
     public function registerStudent(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'matNo' => 'required|min:10|max:10',
+            'matNo' => 'required|min:10|max:10|unique:users',
             'surname' => 'required',
             'state_of_origin' => 'required',
             'dob' => 'required',

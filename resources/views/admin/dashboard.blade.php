@@ -40,7 +40,6 @@
     </div>
 @endif
 
-data here
 
 </body>
 @include('layouts.footer')

@@ -1,95 +1,121 @@
-<!doctype html>
-<html lang="en">
-@include('layouts.navstyle')
-<style>
-    body {
-        /*overflow: hidden; !* Hide scrollbars *!*/
-    }
-</style>
 
-<body>
-<section class="mb-40">
-
-    @include('layouts.nav')
-
-</section>
-@include('layouts.main')
-@if(session('successMsg'))
-    <div class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-gray-800 dark:text-green-400" role="alert">
-        <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-        <span class="sr-only">Info</span>
-        <div>
-            <span class="font-medium">{{session('successMsg')}}</span>
-        </div>
-    </div>
-@endif
-
-@if(session('errorMsg'))
-    <div class="flex p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-gray-800 dark:text-red-400"
-         role="alert">
-        <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
-             xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                  clip-rule="evenodd"></path>
-        </svg>
-        <span class="sr-only">Info</span>
-        <div>
-            <span class="font-medium">{{session('errorMsg')}}</span>
-        </div>
-    </div>
-@endif
-
-<div style="text-align: center; font-size: xx-large;"><h2>Admin Dashboard</h2></div>
-<div class="relative min-h-screen md:flex">
-
-    <!-- mobile menu bar -->
-    <div class="bg-gray-800 text-gray-100 flex justify-between md:hidden">
-        <!-- logo -->
-        <a href="#" class="block p-4 text-white font-bold">Better Dev</a>
-
-        <!-- mobile menu button -->
-        <button class="mobile-menu-button p-4 focus:outline-none focus:bg-gray-700">
-            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-    </div>
-
-    <!-- sidebar -->
-    <div class="sidebar bg-blue-800 text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
-
-        <!-- logo -->
-        <a href="#" class="text-white flex items-center space-x-2 px-4">
-            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-            </svg>
-            <span class="text-2xl font-extrabold">Better Dev</span>
-        </a>
-
-        <!-- nav -->
-        <nav>
-            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
-                Home
-            </a>
-            <a href="" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
-                About
-            </a>
-            <a href="" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
-                Features
-            </a>
-            <a href="" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
-                Pricing
-            </a>
-        </nav>
-    </div>
-
+@include('admin.dashboardtop')
     <!-- content -->
     <div class="flex-1 p-10 text-2xl font-bold">
-        content goes here
-    </div>
+        <section class="bg-gray-50 dark:bg-gray-900">
+            <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
 
-</div>
-</body>
-@include('layouts.footer')
-</html>
+                <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            Register your credentials
+                        </h1>
+                        <form class="space-y-4 md:space-y-6" action="{{route('create')}}" method="post">
+
+                            {{csrf_field()}}
+                            <div>
+                                <label for="matNo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Matriculation
+                                    Number</label>
+                                <input type="number" name="matNo" id="matNo"
+                                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                       placeholder="2005022032" required="" value="{{old('matNo')}}">
+                                @if($errors->has('matNo'))
+                                    <div class="error-danger"
+                                         style="color: #b85151; font-size: small">{{ $errors->first('matNo') }}</div>
+                                @endif
+                            </div>
+
+                            <div>
+                                <label for="surname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Surname</label>
+                                <input type="text" name="surname" id="surname"
+                                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                       placeholder="Okoye" required="" value="{{old('surname')}}">
+                                @if($errors->has('surname'))
+                                    <div class="error-danger"
+                                         style="color: #b85151; font-size: small">{{ $errors->first('surname') }}</div>
+                                @endif
+                            </div>
+
+                            <div>
+                                <label for="state_of_origin"
+                                       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State of
+                                    Origin</label>
+                                <select name="state_of_origin" id="state" onchange="toggleLGA(this)" value="{{old('state_of_origin') }}">
+                                    <option value="" selected="selected">Select State...</option>
+                                    <option value="Abia">Abia</option>
+                                    <option value="Adamawa">Adamawa</option>
+                                    <option value="AkwaIbom">AkwaIbom</option>
+                                    <option value="Anambra">Anambra</option>
+                                    <option value="Bauchi">Bauchi</option>
+                                    <option value="Bayelsa">Bayelsa</option>
+                                    <option value="Benue">Benue</option>
+                                    <option value="Borno">Borno</option>
+                                    <option value="Cross River">Cross River</option>
+                                    <option value="Delta">Delta</option>
+                                    <option value="Ebonyi">Ebonyi</option>
+                                    <option value="Edo">Edo</option>
+                                    <option value="Ekiti">Ekiti</option>
+                                    <option value="Enugu">Enugu</option>
+                                    <option value="FCT">FCT</option>
+                                    <option value="Gombe">Gombe</option>
+                                    <option value="Imo">Imo</option>
+                                    <option value="Jigawa">Jigawa</option>
+                                    <option value="Kaduna">Kaduna</option>
+                                    <option value="Kano">Kano</option>
+                                    <option value="Katsina">Katsina</option>
+                                    <option value="Kebbi">Kebbi</option>
+                                    <option value="Kogi">Kogi</option>
+                                    <option value="Kwara">Kwara</option>
+                                    <option value="Lagos">Lagos</option>
+                                    <option value="Nasarawa">Nasarawa</option>
+                                    <option value="Niger">Niger</option>
+                                    <option value="Ogun">Ogun</option>
+                                    <option value="Ondo">Ondo</option>
+                                    <option value="Osun">Osun</option>
+                                    <option value="Oyo">Oyo</option>
+                                    <option value="Plateau">Plateau</option>
+                                    <option value="Rivers">Rivers</option>
+                                    <option value="Sokoto">Sokoto</option>
+                                    <option value="Taraba">Taraba</option>
+                                    <option value="Yobe">Yobe</option>
+                                    <option value="Zamfara">Zamafara</option>
+                                </select>
+                                @if($errors->has('state_of_origin'))
+                                    <div class="error-danger"
+                                         style="color: #b85151; font-size: small">{{ $errors->first('state_of_origin') }}</div>
+                                @endif
+                            </div>
+
+                            <div>
+                                <label for="dob" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Of
+                                    Birth</label>
+                                <input type="date" name="dob" id="dob"
+                                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                       placeholder="" required="" value="{{old('dob')}}">
+                                @if($errors->has('dob'))
+                                    <div class="error-danger"
+                                         style="color: #b85151; font-size: small">{{ $errors->first('dob') }}</div>
+                                @endif
+                            </div>
+                            <div>
+                                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••"
+                                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                       required="">
+                                @if($errors->has('password'))
+                                    <div class="error-danger"
+                                         style="color: #b85151; font-size: small">{{ $errors->first('password') }}</div>
+                                @endif
+                            </div>
+
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Register
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+@include('admin.dashboardbottom')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -15,7 +16,21 @@ class AdminController extends Controller
 
     public function dashboardView()
     {
-        return view('/admin/dashboard');
+        $data = Session::get('admin');
+
+        //Checking if the session is empty so as to ensure the admin gets routed to the login page
+        if ($data == "") {
+            return view('admin/adminlogin');
+
+        } else {
+            //Getting the admin email
+            $email = $data->email;
+
+
+            $user = Admin::all()->where('email', '=', $email);
+        }
+
+        return view('/admin/dashboard', compact('user'));
     }
 
     public function createAdmin(Request $request){

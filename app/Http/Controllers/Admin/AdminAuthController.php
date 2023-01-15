@@ -22,6 +22,10 @@ class AdminAuthController extends Controller
 
         if(auth()->guard('admin')->attempt(['email' => $request->input('email'),  'password' => $request->input('password')])){
             $user = auth()->guard('admin')->user();
+
+//            Starting an admin session
+            Session::put('admin', $user);
+
             if($user->email == $request->email){
 //                return "Welcome admin";
                 return redirect()->route('admin_dashboard');

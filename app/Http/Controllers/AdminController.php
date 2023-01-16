@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Levels;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -30,7 +31,10 @@ class AdminController extends Controller
         }
 
         $levels = Levels::all();
-        return view('/admin/upload_certificate', compact('user','levels'));
+
+        $users = User::all();
+
+        return view('/admin/upload_certificate', compact('user','levels', 'users'));
 
     }
 

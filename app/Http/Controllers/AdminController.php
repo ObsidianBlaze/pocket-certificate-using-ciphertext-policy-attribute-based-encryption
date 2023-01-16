@@ -32,9 +32,9 @@ class AdminController extends Controller
 
         $levels = Levels::all();
 
-        $users = User::all();
+        $students = User::all();
 
-        return view('/admin/upload_certificate', compact('user','levels', 'users'));
+        return view('/admin/upload_certificate', compact('user','levels', 'students'));
 
     }
 

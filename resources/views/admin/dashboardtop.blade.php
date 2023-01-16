@@ -81,7 +81,7 @@
                 Admin Home
             </a>
             <a href="{{url('/admin/upload_certificate')}}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
-                About
+                Upload Certificate
             </a>
             <a href="" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
                 Features

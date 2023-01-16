@@ -40,12 +40,12 @@ Route::prefix('/student')->group(function () {
 Route::prefix('/admin')->group(function () {
     Route::get('/login', [AdminController::class, 'loginView'])->name('admin_login');
 //    Route::get('/register', [AdminController::class, 'registerView'])->name('admin_register');
-    Route::post('/create', [AdminController::class, 'createAdmin'])->name('create_admin');
+    Route::post('/create', [AdminController::class, 'createAdmin'])->name('create_admin')->middleware('adminauth');
 //    Route::post('/login', [LoginController::class, 'adminLogin'])->name('login_admin');
     Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('login_admin');
     Route::get('/logout', [AdminAuthController::class, 'adminLogout'])->name('logout_admin');
 
-    Route::get('/dashboard', [AdminController::class, 'dashboardView'])->name('admin_dashboard');
+    Route::get('/dashboard', [AdminController::class, 'dashboardView'])->name('admin_dashboard')->middleware('adminauth');
 
 
 

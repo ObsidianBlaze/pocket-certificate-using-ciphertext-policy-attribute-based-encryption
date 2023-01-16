@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Levels;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -25,11 +26,11 @@ class AdminController extends Controller
             //Getting the admin email
             $email = $data->email;
 
-
             $user = Admin::all()->where('email', '=', $email);
         }
 
-        return view('/admin/upload_certificate', compact('user'));
+        $levels = Levels::all();
+        return view('/admin/upload_certificate', compact('user','levels'));
 
     }
 

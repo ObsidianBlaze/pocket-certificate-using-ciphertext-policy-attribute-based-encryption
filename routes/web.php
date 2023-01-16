@@ -44,10 +44,9 @@ Route::prefix('/admin')->group(function () {
 //    Route::post('/login', [LoginController::class, 'adminLogin'])->name('login_admin');
     Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('login_admin');
     Route::get('/logout', [AdminAuthController::class, 'adminLogout'])->name('logout_admin');
+    Route::get('/upload_certificate', [AdminController::class, 'uploadCertificate'])->name('upload_certificate')->middleware('adminauth');
 
     Route::get('/dashboard', [AdminController::class, 'dashboardView'])->name('admin_dashboard')->middleware('adminauth');
-
-
 
 
 });

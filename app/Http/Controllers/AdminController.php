@@ -14,6 +14,25 @@ class AdminController extends Controller
         return view('/admin/adminlogin');
     }
 
+    public function uploadCertificate(){
+        $data = Session::get('admin');
+
+        //Checking if the session is empty so as to ensure the admin gets routed to the login page
+        if ($data == "") {
+            return view('admin/adminlogin');
+
+        } else {
+            //Getting the admin email
+            $email = $data->email;
+
+
+            $user = Admin::all()->where('email', '=', $email);
+        }
+
+        return view('/admin/upload_certificate', compact('user'));
+
+    }
+
     public function dashboardView()
     {
         $data = Session::get('admin');

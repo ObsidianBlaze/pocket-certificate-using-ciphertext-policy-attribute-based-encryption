@@ -12,7 +12,13 @@
     </select>
 
     @foreach($user as $admin)
-        {{$admin -> id}}
+      Admin ID:  {{$admin -> id}}
+    @endforeach
+
+    @foreach($students as $student)
+        <option value="">
+      Student Mat:      {{$student -> mat_no}}
+        </option>
     @endforeach
 
 </div>

@@ -10,6 +10,10 @@
             <option value="{{$level -> id}}">{{$level -> name}}</option>
     @endforeach
     </select>
-    
+
+    @foreach($user as $admin)
+        {{$admin -> id}}
+    @endforeach
+
 </div>
 @include('admin.dashboardbottom')

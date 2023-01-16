@@ -12,8 +12,8 @@
 
 
 @include('layouts.nav')
-        <div class="text-center bg-gray-50 text-gray-800 py-24 px-6">
-            <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">Pocket Certificate
+        <div class="text-center bg-gray-50 text-gray-800 py-24 px-6" style="margin-bottom: -100px; padding-bottom: -250px;">
+            <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12" style="font-size: 40px">Pocket Certificate
                 <br/><span class="text-blue-600">Lagos State Polytechnic</span></h1>
         </div>
     </section>
@@ -24,11 +24,11 @@
 </div>
 
 {{--Carousel--}}
-<div id="carousel">
+<div id="carousel" style="margin-top: -130px;">
     <div id="slide-container">
         <div class="slide" data-slideIndex="0">
             <div class="slide-banner">School Entrance</div>
-            <img width="1200" height="600" src="{{asset('img/laspotech_slide1.jpg')}}">
+            <img width="1200" height="600" src="{{asset('img/laspotech_slide1.jpg')}}" style="width: 2000px;">
         </div>
         <div class="slide" data-slideIndex="1">
             <div class="slide-banner">Library Complex!</div>
@@ -36,7 +36,7 @@
         </div>
         <div class="slide" data-slideIndex="2">
             <div class="slide-banner">Governor Awarding Student </div>
-            <img width="1200" height="600" src="{{asset('img/laspotech_slide3.jpg')}}">
+            <img width="1200" height="600" src="{{asset('img/laspotech_slide3.jpg')}}" style="width: 2000px;">
         </div>
 {{--        <div class="slide" data-slideIndex="3">--}}
 {{--            <div class="slide-banner">See penguins! <a href="">Buy tickets now.</a></div>--}}

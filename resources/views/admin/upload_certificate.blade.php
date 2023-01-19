@@ -19,8 +19,8 @@
             <label for="mat_number" style="padding-left: 20px;">Mat Number:</label>
             <input type="number" name="mat_number" style="border: 1px solid black">
 
-            <button class="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
-                Cancel
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Sign in
             </button>
         </div>
     </form>

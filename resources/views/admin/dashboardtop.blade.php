@@ -52,7 +52,7 @@
     <!-- mobile menu bar -->
     <div class="bg-gray-800 text-gray-100 flex justify-between md:hidden">
         <!-- logo -->
-        <a href="#" class="block p-4 text-white font-bold">Better Dev</a>
+        <a href="#" class="block p-4 text-white font-bold"></a>
 
         <!-- mobile menu button -->
         <button class="mobile-menu-button p-4 focus:outline-none focus:bg-gray-700">
@@ -82,9 +82,6 @@
             </a>
             <a href="{{url('/admin/upload_certificate')}}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
                 Upload Certificate
-            </a>
-            <a href="" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
-                Features
             </a>
             <a href="{{url('/admin/logout')}}"
                class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">

@@ -38,9 +38,9 @@ class AdminController extends Controller
 
         $certificate = Certificate::all();
 
-        $department = Departments::all();
+        $departments = Departments::all();
 
-        return view('/admin/upload_certificate', compact('user','levels', 'students', 'certificate', 'department'));
+        return view('/admin/upload_certificate', compact('user','levels', 'students', 'certificate', 'departments'));
 
     }
 

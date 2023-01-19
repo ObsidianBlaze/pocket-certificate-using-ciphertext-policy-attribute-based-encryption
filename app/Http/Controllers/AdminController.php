@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Certificate;
+use App\Models\Departments;
 use App\Models\Levels;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -37,7 +38,9 @@ class AdminController extends Controller
 
         $certificate = Certificate::all();
 
-        return view('/admin/upload_certificate', compact('user','levels', 'students', 'certificate'));
+        $department = Departments::all();
+
+        return view('/admin/upload_certificate', compact('user','levels', 'students', 'certificate', 'department'));
 
     }
 

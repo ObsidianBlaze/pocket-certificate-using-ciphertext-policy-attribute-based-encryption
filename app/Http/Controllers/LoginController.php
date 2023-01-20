@@ -22,10 +22,13 @@ class LoginController extends Controller
         }
 
         $credentials = $request->only('mat_no', 'password');
-        if (Auth::attempt($credentials)) {
-            return "logged in";
-//            return redirect()->intended('dashboard')
-//                ->withSuccess('Signed in');
+        if(auth()->attempt(['mat_no' => $request->input('mat_no'),  'password' => $request->input('password')])){
+            $user = auth()->user();
+
+            //Starting a user session
+            Session::put('user', $user);
+
+            return redirect()->route('student_dashboard');
         }
 
         return redirect('/student/login')->with('errorMsg', 'Confirm your username and password');
@@ -54,17 +57,27 @@ class LoginController extends Controller
 
     public function dashboard()
     {
-        if(Auth::check()){
-            return view('dashboard');
+        $data = Session::get('user');
+
+        //Checking if the session is empty so as to ensure the admin gets routed to the login page
+        if ($data == "") {
+            return view('student/studentlogin');
+
+        } else {
+            //Getting the admin email
+            $mat_no = $data->mat_no;
+
+
+            $user = User::all()->where('mat_no', '=', $mat_no);
         }
 
-        return redirect("login")->withSuccess('You are not allowed to access');
+        return view('/student/dashboard', compact('user'));
     }
 
     public function signOut() {
+        auth()->logout();
         Session::flush();
-        Auth::logout();
-
-        return Redirect('login');
+        Session::put('success', 'You are logout sucessfully');
+        return redirect(route('student_login'));
     }
 }
